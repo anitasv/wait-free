@@ -255,4 +255,5 @@ FakesAssemblies/
 # Visual Studio 6 workspace options file
 *.opt
 
-
+# Maven build output.
+target
