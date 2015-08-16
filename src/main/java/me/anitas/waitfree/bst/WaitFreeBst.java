@@ -23,9 +23,10 @@ public class WaitFreeBst<K extends Comparable<K>, V> implements ConcurrentMap<K,
     private final ThreadLocal<Integer> threadIdMap = new ThreadLocal<Integer>() {
         @Override
         public Integer initialValue() {
-            return threadId.incrementAndGet();
+            return threadId.incrementAndGet() - 1;
         }
     };
+
     @Override
     public int size() {
         return this.engine.apply(threadIdMap.get(), new BstSize<K, V>()).getResult();

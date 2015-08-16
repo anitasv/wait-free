@@ -40,7 +40,7 @@ public class Engine<State> {
 
     public  <V> Tuple<State, V> apply(int p, Invocation<State, V> what) {
 
-        assert 0 < p && p < heads.length();
+        assert 0 <= p && p < heads.length();
 
         Cell<V> mine = new Cell<>();
         mine.seq = 0;
